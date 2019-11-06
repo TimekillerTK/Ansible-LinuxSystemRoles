@@ -1,0 +1,13 @@
+---
+- hosts: centos_ftp
+  vars:
+    network_connections:
+      - name: eth1
+        state: up
+        type: ethernet
+        autoconnect: yes
+        mac: 52:54:00:c4:e5:cd
+        mtu: 1450
+
+  roles:
+    - linux-system-roles.network
