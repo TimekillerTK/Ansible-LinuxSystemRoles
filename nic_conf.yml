@@ -1,0 +1,14 @@
+---
+- name: Set up network connection using linux-system-roles
+  hosts: centos_ftp
+  vars:
+    network_connections:
+      - name: eth1
+        type: ethernet
+        autoconnect: yes
+        state: up
+        mac: "52:54:00:c4:e5:cd"
+        ip:
+          address: "192.168.192.6/24"
+  roles:
+    - linux-system-roles.network
